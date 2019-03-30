@@ -1,4 +1,4 @@
-#from __future__ import unicode_literals
+from __future__ import unicode_literals
 #import datetime
 from django.db import models
 from django.contrib.auth.models import User
@@ -19,5 +19,5 @@ class Income(models.Model):
     date = models.DateTimeField()
     amount = models.BigIntegerField()
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
-    def __str__(self):
+    def __unicode__(self):
         return (self.date , self.amount)
